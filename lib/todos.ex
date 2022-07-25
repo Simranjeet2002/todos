@@ -17,9 +17,9 @@ defmodule Todos do
     def complete_todo(task_list,task) do
       if(contains_task?(task_list,task)) do
         List.delete(task_list,task)
-      end
-    else
+      else
       :not_found
+      end
     end
     def search_word?(task_list , word) do
       for task <-task_list , String.contains?(task,word) do
