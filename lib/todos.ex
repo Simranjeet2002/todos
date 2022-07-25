@@ -26,5 +26,8 @@ defmodule Todos do
         task
       end
     end
-
+    def save(task_list, filename) do
+      binary= :erlang.term_to_binary(task_list)
+      File.write(filename,binary)
+    end
 end
