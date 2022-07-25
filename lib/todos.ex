@@ -30,4 +30,10 @@ defmodule Todos do
       binary= :erlang.term_to_binary(task_list)
       File.write(filename,binary)
     end
+    def read(filename) do
+      case File.read(filename) do
+        {:ok,data} ->:erlang.binary_to_term(data)
+        {:error,_}-> "file does not exist"
+      end
+    end
 end
